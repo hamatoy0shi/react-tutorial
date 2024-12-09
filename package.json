@@ -1,0 +1,18 @@
+{
+  "name": "react-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:spirit-drive/react-tutorial.git",
+  "author": "Igor <spirit-drive@yandex.ru>",
+  "license": "MIT",
+  "scripts": {
+    "slides": "reveal-md ./presentations",
+    "start:client": "cd client && npm start",
+    "start:server": "cd server && npm start",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "reveal-md": "^2.4.1"
+  }
+}

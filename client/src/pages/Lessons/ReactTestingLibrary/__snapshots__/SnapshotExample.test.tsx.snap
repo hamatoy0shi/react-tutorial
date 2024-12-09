@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot testing SomeComponent 1`] = `
+<div>
+  <div
+    aria-label="test"
+    id="some-component"
+  >
+    <div
+      aria-label="test"
+    >
+      Название
+    </div>
+    <div>
+      Описание
+    </div>
+  </div>
+</div>
+`;

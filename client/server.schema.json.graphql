@@ -1,0 +1,98 @@
+# This file was generated. Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+interface UserInterface {
+    about: String
+    id: ID!
+    name: String
+    signUpDate: String!
+}
+
+union Animal = Cat | Dog
+
+type AuthResult {
+    token: String!
+}
+
+type Cat {
+    age: Float
+    id: ID!
+    name: String
+}
+
+type Customer {
+    id: ID!
+    img: String
+    name: String
+}
+
+type CustomerMutations {
+    add(img: String, name: String!): Customer!
+    edit(id: ID!, img: String, name: String!): Customer!
+    remove(id: ID!): Boolean!
+}
+
+type Dog {
+    age: Float
+    id: ID!
+    name: String
+}
+
+type Mutation {
+    customers: CustomerMutations
+    profile: ProfileMutations
+}
+
+type Profile implements UserInterface {
+    about: String
+    email: String!
+    id: ID!
+    name: String
+    signUpDate: String!
+}
+
+type ProfileMutations {
+    password: ProfilePasswordMutations
+    signin(email: String!, password: String!): AuthResult!
+    signup(email: String!, password: String!): AuthResult!
+    update(input: UpdateProfileInput!): Profile!
+}
+
+type ProfilePasswordMutations {
+    change(input: ChangePasswordInput!): ResetPassword!
+}
+
+type Query {
+    animals: [Animal]
+    customers(ids: [ID!]): [Customer]
+    profile: Profile
+}
+
+type ResetPassword {
+    success: Boolean!
+}
+
+type User implements UserInterface {
+    about: String
+    id: ID!
+    name: String
+    signUpDate: String!
+}
+
+input ChangePasswordInput {
+    newPassword: String!
+    password: String!
+}
+
+input UpdateProfileInput {
+    about: String
+    name: String
+}
+
+input UserFilters {
+    id: ID!
+}
